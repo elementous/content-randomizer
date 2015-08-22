@@ -12,8 +12,8 @@ class RandomText_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'random_text_widget', // Base ID
-			__('Random Text', 'elm'), // Name
-			array( 'description' => __( 'Display random text.', 'elm' ), ) // Args
+			__('Content Randomizer', 'elm'), // Name
+			array( 'description' => __( 'Display random content.', 'elm' ), ) // Args
 		);
 	}
 

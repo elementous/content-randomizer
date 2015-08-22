@@ -1,6 +1,6 @@
 <?php
 /*
-  Plugin Name: Random Text by Elementous
+  Plugin Name: Content Randomizer
   Plugin URI: https://www.elementous.com
   Description: This plugin allows you to add texts or images and display them in a random order.
   Author: Elementous

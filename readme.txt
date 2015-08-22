@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: elementous, dominykasgel
+Contributors: elementous, dominykasgel, darius_fx
 Donate link: http://www.elementous.com
 Tags: random, text, quote, joke, featured, image, widgets
 Requires at least: 3.0.1
@@ -21,14 +21,14 @@ Features:
 
 == Installation ==
 
-1. Upload `randomtext` to the `/wp-content/plugins/` directory
+1. Upload `content-randomizer` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
 
 = How to add random text or image? =
 
-You can use RandomText widget or elm_randomtext shortcode.
+You can use Content Randomizer widget or elm_randomtext shortcode.
 
 = Shortcodes =
 
