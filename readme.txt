@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: elementous, dominykasgel
 Donate link: http://www.elementous.com
-Tags: random, text, quote, joke, featured, image
+Tags: random, text, quote, joke, featured, image, widgets
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 4.3
+Stable tag: 1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
