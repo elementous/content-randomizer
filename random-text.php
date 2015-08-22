@@ -19,10 +19,12 @@ class RandomText {
 	function init() {
 	
 		$this->register_custom_posts();
+		
 	}
 	
 	/**
 	 * Load CSS and JS for admin.
+	 * @global $post
 	 *
 	 */
 	function admin_css_js() {
@@ -35,11 +37,12 @@ class RandomText {
 		wp_enqueue_script( 'jquery-ui-core' );
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		
-		wp_enqueue_style('jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css');
+		wp_enqueue_style( 'jquery-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css' );
 	}
 	
 	/**
 	 * Admin footer JS.
+	 * @global $post
 	 *
 	 */
 	function admin_footer() {
@@ -49,15 +52,15 @@ class RandomText {
 			return; 
 ?>
 	<script type="text/javascript">
-	jQuery(document).ready(function() {
-		jQuery('#date_from').datepicker({
-			dateFormat : 'dd-mm-yy'
+		jQuery(document).ready(function() {
+			jQuery('#date_from').datepicker({
+				dateFormat : 'dd-mm-yy'
+			});
+			
+			jQuery('#date_to').datepicker({
+				dateFormat : 'dd-mm-yy'
+			});
 		});
-		
-		jQuery('#date_to').datepicker({
-			dateFormat : 'dd-mm-yy'
-		});
-	});
 	</script>
 <?php
 	}
@@ -77,6 +80,7 @@ class RandomText {
 	
 	/**
 	 * Date range box callback.
+	 * @global $post
 	 *
 	 */
 	function date_range_callback() {
@@ -100,6 +104,7 @@ class RandomText {
 
 	/**
 	 * Save post.
+	 * @param $post_id
 	 *
 	 */
 	function save_post( $post_id ) {
@@ -109,36 +114,50 @@ class RandomText {
 	
 	/**
 	 * Get random text.
+	 * @param $type
 	 *
 	 */
-	function get_random_text() {
+	function get_random_text( $type = 'text' ) {
 	
 		$texts = new WP_Query( 
-			array( 
+			apply_filters( 'elm_rt_get_random_text_args', array( 
 				'post_type' => 'elm_texts', 
 				'post_status' => 'publish', 
 				'orderby' => 'rand', 
-				'posts_per_page' => '1',
-				'meta_query' => array(
-					array(
-						'key' => '_date_from',
-						'value' => date('d-m-Y'),
-						'compare' => '<='
-					),
-					array(
-						'key' => '_date_to',
-						'value' => date('d-m-Y'),
-						'compare' => '>='
-					)
-				)
-			) 
+				'posts_per_page' => '1'
+			) )
 		);
 				
 		if ( $texts->have_posts() ) :
 		
 			while ( $texts->have_posts() ) : $texts->the_post();
+			
+				$date_from = get_post_meta( get_the_ID(), '_date_from', true );
+				$date_to = get_post_meta( get_the_ID(), '_date_to', true );
+				
+				if ( !empty( $date_from ) || !empty( $date_to ) ) {
 		
-			return get_the_content();
+					if ( empty( $date_from ) )
+						$date_from = date('d-m-Y');
+						
+					if ( empty( $date_to ) )
+						$date_to = date('d-m-Y');
+					
+					if ( $date_from <= date('d-m-Y') && $date_to >= date('d-m-Y') ) {
+						if ( $type == 'text' ) { 
+							return apply_filters( 'elm_rt_get_the_content', get_the_content() );
+						} else if ( $type == 'image' ) { 
+							return apply_filters( 'elm_rt_get_the_post_thumbnail', get_the_post_thumbnail( get_the_ID(), apply_filters( 'elm_rt_thumbnail_size', 'medium' ) ) );
+						}
+					}
+					
+				} else {
+					if ( $type == 'text' ) {
+						return apply_filters( 'elm_rt_get_the_content', get_the_content() );
+					} else if ( $type == 'image' ) {
+						return apply_filters( 'elm_rt_get_the_post_thumbnail', get_the_post_thumbnail( get_the_ID(), apply_filters( 'elm_rt_thumbnail_size', 'medium' ) ) );
+					}
+				}
 					
 			endwhile;
 				
@@ -169,7 +188,7 @@ class RandomText {
 
 		$args = array(
 			'labels'             => $labels,
-			'public'             => true,
+			'public'             => false,
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
@@ -179,10 +198,10 @@ class RandomText {
 			'has_archive'        => true,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-			'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' )
+			'supports'           => array( 'title', 'editor', 'thumbnail' )
 		);
 
-		register_post_type( 'elm_texts', $args );
+		register_post_type( 'elm_texts', apply_filters( 'elm_rt_custom_post_args', $args ) );
 	}
 	
 	/**

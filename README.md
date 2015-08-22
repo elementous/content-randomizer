@@ -1,2 +1,0 @@
-# randomtext
-RandomText WordPress plugin

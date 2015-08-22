@@ -2,7 +2,7 @@
 /*
   Plugin Name: Random Text by Elementous
   Plugin URI: https://www.elementous.com
-  Description: This plugin allows you to add texts and display them in a random order.
+  Description: This plugin allows you to add texts/images and display them in a random order.
   Author: Elementous
   Author URI: https://www.elementous.com
   Version: 1.0
@@ -16,6 +16,7 @@ define( 'ELM_RT_PLUGIN_URL', plugins_url() . '/' . ELM_RT_PLUGIN_FOLDER );
 
 require ELM_RT_PLUGIN_PATH . '/random-text.php';
 require ELM_RT_INCLUDES_PATH . '/widgets.php';
+require ELM_RT_INCLUDES_PATH . '/shortcodes.php';
 
 $random_text = new RandomText();
 

@@ -34,7 +34,7 @@ class RandomText_Widget extends WP_Widget {
 			
 		global $random_text;
 		
-		echo $random_text->get_random_text();
+		echo $random_text->get_random_text( $instance['type'] );
 ?>
 	</aside>
 <?php
@@ -59,6 +59,20 @@ class RandomText_Widget extends WP_Widget {
 		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'type' ); ?>"><?php _e( 'Type:' ); ?></label><br />
+		<select id="<?php echo $this->get_field_id( 'type' ); ?>" name="<?php echo $this->get_field_name( 'type' ); ?>" class="widefat">
+		<?php
+		$options = array( 'text' => __('Text', 'elm'), 'image' => __('Image', 'elm') );
+				
+		foreach ( $options as $key => $value ) :
+			$selected = ( $instance[ 'type' ] == $key ) ? 'selected' : '';
+		
+			echo '<option value="'. $key .'" '. $selected .'>'. $value .'</option>' . "\r\n";
+		endforeach;
+		?>
+		</select> 
+		</p>
 		<?php 
 	}
 
@@ -75,6 +89,7 @@ class RandomText_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['type'] = ( ! empty( $new_instance['type'] ) ) ? strip_tags( $new_instance['type'] ) : '';
 		
 		return $instance;
 	}
