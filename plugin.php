@@ -5,7 +5,7 @@
   Description: This plugin allows you to add texts or images and display them in a random order.
   Author: Elementous
   Author URI: https://www.elementous.com
-  Version: 1.0
+  Version: 1.1
 */
 
 define( 'ELM_RT_VERSION', '1.1' );
