@@ -4,7 +4,7 @@ Donate link: http://www.elementous.com
 Tags: random, text, quote, joke, featured, image, widgets
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,9 +14,10 @@ This plugin allows you to add texts or images, and display them in a random orde
 
 You will be able to add texts, images and display them in a random order. For example: You can use it for quote of the day.
 
-Features:
+= Features =
+
 * Date range when text or image should be shown
-* Use text or featured image
+* Display random text or featured image
 * Widget and shortcode
 
 == Installation ==

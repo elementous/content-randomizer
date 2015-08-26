@@ -179,7 +179,7 @@ class RandomText {
 			'new_item'           => __( 'New Item', 'elm' ),
 			'edit_item'          => __( 'Edit Item', 'elm' ),
 			'view_item'          => __( 'View Item', 'elm' ),
-			'all_items'          => __( 'All Texts', 'elm' ),
+			'all_items'          => __( 'All Items', 'elm' ),
 			'search_items'       => __( 'Search Item', 'elm' ),
 			'parent_item_colon'  => __( 'Parent Item:', 'elm' ),
 			'not_found'          => __( 'No item found.', 'elm' ),
@@ -188,7 +188,7 @@ class RandomText {
 
 		$args = array(
 			'labels'             => $labels,
-			'public'             => false,
+			'public'             => true,
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
