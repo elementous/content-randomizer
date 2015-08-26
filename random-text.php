@@ -170,20 +170,20 @@ class RandomText {
 	 */
 	function register_custom_posts() {
 		$labels = array(
-			'name'               => _x( 'Texts', 'elm' ),
-			'singular_name'      => _x( 'Text', 'elm' ),
-			'menu_name'          => _x( 'Texts', 'elm' ),
-			'name_admin_bar'     => _x( 'Texts', 'elm' ),
+			'name'               => _x( 'Items', 'elm' ),
+			'singular_name'      => _x( 'Item', 'elm' ),
+			'menu_name'          => _x( 'Randomizer', 'elm' ),
+			'name_admin_bar'     => _x( 'Items', 'elm' ),
 			'add_new'            => _x( 'Add New', 'elm' ),
-			'add_new_item'       => __( 'Add New Text', 'elm' ),
-			'new_item'           => __( 'New Text', 'elm' ),
-			'edit_item'          => __( 'Edit Text', 'elm' ),
-			'view_item'          => __( 'View Text', 'elm' ),
+			'add_new_item'       => __( 'Add New Item', 'elm' ),
+			'new_item'           => __( 'New Item', 'elm' ),
+			'edit_item'          => __( 'Edit Item', 'elm' ),
+			'view_item'          => __( 'View Item', 'elm' ),
 			'all_items'          => __( 'All Texts', 'elm' ),
-			'search_items'       => __( 'Search Text', 'elm' ),
-			'parent_item_colon'  => __( 'Parent Text:', 'elm' ),
-			'not_found'          => __( 'No text found.', 'elm' ),
-			'not_found_in_trash' => __( 'No text found in Trash.', 'elm' )
+			'search_items'       => __( 'Search Item', 'elm' ),
+			'parent_item_colon'  => __( 'Parent Item:', 'elm' ),
+			'not_found'          => __( 'No item found.', 'elm' ),
+			'not_found_in_trash' => __( 'No item found in Trash.', 'elm' )
 		);
 
 		$args = array(
