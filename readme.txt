@@ -42,5 +42,8 @@ Example: [elm_randomtext type="text"] - type can be text or image.
 
 == Changelog ==
 
+= 1.1 =
+* WPML Support
+
 = 1.0 =
 * Initial release.
