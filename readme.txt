@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: elementous, dominykasgel, darius_fx
-Donate link: http://www.elementous.com
+Donate link: https://www.elementous.com
 Tags: random, text, quote, joke, featured, image, widgets
 Requires at least: 3.0.1
 Tested up to: 4.3
