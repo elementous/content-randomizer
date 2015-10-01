@@ -26,17 +26,18 @@ class RandomText_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database
 	 */
 	public function widget( $args, $instance ) {
-		$title = apply_filters( 'widget_title', $instance['title'] );
-
 		echo $args['before_widget'];
+	
+		$title = apply_filters( 'widget_title', $instance['title'] );
 		if ( ! empty( $title ) )
 			echo $args['before_title'] . $title . $args['after_title'];
 			
 		global $random_text;
 		
 		echo $random_text->get_random_text( $instance['type'] );
+		
+		echo $args['after_widget'];
 ?>
-	</aside>
 <?php
 	}
 
