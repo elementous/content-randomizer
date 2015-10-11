@@ -42,6 +42,14 @@ Example: [elm_randomtext type="text"] - type can be text or image.
 
 == Changelog ==
 
+= 1.2 =
+* Feature: Added categories for randomizer custom posts
+* Feature: Added slideshow (Owl carousel) widget and shortcode
+* Feature: Added video to the list of types
+* Feature: Now date range is not required when adding a randomizer post
+* Improved: Overall logic and structure
+* Fixed: Closing randomizer widget wrapper div
+
 = 1.1 =
 * WPML Support
 
