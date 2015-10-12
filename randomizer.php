@@ -316,7 +316,7 @@ class Elm_Randomizer {
 			jQuery( document ).ready(function( $ ) {
 				 jQuery(".randomizer-slideshow").owlCarousel({
 					<?php
-					  $args = apply_filters( 'elm_rt_slideshow_args', 'singleItem:true, items: 1, autoplay:true, autoplayTimeout: 3000, autoplayHoverPause: true, dots: false' );
+					  $args = apply_filters( 'elm_rt_slideshow_args', 'singleItem:true, items:1, autoplay:true, autoplayTimeout:3000, autoplayHoverPause:true, dots:false, loop:true' );
 					  
 					  echo $args;
 					?>
@@ -335,6 +335,13 @@ class Elm_Randomizer {
 		if ( get_option( 'elm_randomizer' ) != 'installed' ) {
 			update_option( 'elm_randomizer', 'installed' );
 		}
+		
+		// Register custom post and taxonomy here so that we can flush permalinks
+		$this->register_cp_and_tax();
+		
+		global $wp_rewrite;
+		
+		$wp_rewrite->flush_rules( false );
 	}
 }
 
