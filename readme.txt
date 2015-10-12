@@ -8,19 +8,21 @@ Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-This plugin allows you to add texts or images, and display them in a random order.
+This plugin allows you to add texts, images, videos and display them in a random order or slideshow.
 
 == Description ==
 
-You will be able to add texts, images and display them in a random order. For example: You can use it for quote of the day.
+You will be able to add texts, images, videos and display them in a random order or slideshow. For example: You can use it for quote of the day.
 
 We have a public [GIT repository](https://github.com/elementous/content-randomizer) for this plugin and you're wellcome to contribute your patch.
 
 = Features =
 
-* Date range when text or image should be shown
-* Display random text or featured image
-* Widget and shortcode
+* Display random text, featured image or video
+* Display slideshow
+* Date range when text, image, video should be shown
+* Categories
+* Widgets and shortcodes
 
 == Installation ==
 
@@ -29,13 +31,14 @@ We have a public [GIT repository](https://github.com/elementous/content-randomiz
 
 == Frequently Asked Questions ==
 
-= How to add random text or image? =
+= How to display random text, image or video? =
 
-You can use Content Randomizer widget or elm_randomtext shortcode.
+You can use Randomizer widget, elm_random or elm_slideshow shortcodes.
 
 = Shortcodes =
 
-Example: [elm_randomtext type="text"] - type can be text or image.
+Random content: [elm_random type="text" category="all"] - type can be text, image or video.
+Slideshow: [elm_slideshow type="text" category="all"] - type can be text, image or video.
 
 == Screenshots ==
 
