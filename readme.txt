@@ -1,7 +1,7 @@
 === Plugin Name ===
-Contributors: elementous, dominykasgel, darius_fx
+Contributors: Elementous, dominykasgel, darius_fx
 Donate link: https://www.elementous.com
-Tags: random, text, quote, joke, featured, image, widgets
+Tags: random, text, quote, joke, featured, image, widget, slider
 Requires at least: 3.0.1
 Tested up to: 4.3
 Stable tag: 1.1
@@ -13,6 +13,8 @@ This plugin allows you to add texts or images, and display them in a random orde
 == Description ==
 
 You will be able to add texts, images and display them in a random order. For example: You can use it for quote of the day.
+
+We have a public [GIT repository](https://github.com/elementous/content-randomizer) for this plugin and you're wellcome to contribute your patch.
 
 = Features =
 
