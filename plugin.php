@@ -2,7 +2,7 @@
 /*
   Plugin Name: Content Randomizer
   Plugin URI: https://www.elementous.com
-  Description: This plugin allows you to add texts or images and display them in a random order.
+  Description: This plugin allows you to add texts, images, videos and display them in a random order or slideshow.
   Author: Elementous
   Author URI: https://www.elementous.com
   Version: 1.2
