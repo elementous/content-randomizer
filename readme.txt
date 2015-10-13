@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: Elementous, dominykasgel, darius_fx
 Donate link: https://www.elementous.com
-Tags: random, text, quote, joke, featured, image, widget, slider
+Tags: random, text, quote, joke, featured, image, video, widget, shortcode, slider, slideshow
 Requires at least: 3.0.1
 Tested up to: 4.3
 Stable tag: 1.1
@@ -55,11 +55,11 @@ Slideshow: [elm_slideshow type="text" category="all"] - content type can be text
 
 = 1.2 =
 * Feature: Added categories for randomizer custom posts
-* Feature: Added slideshow (Owl carousel) widget and shortcode
+* Feature: Added slideshow (Owl carousel) widget and shortcode (As requested by Lance Jacobs)
 * Feature: Added video to the list of types
 * Feature: Now date range is not required when adding a randomizer post
 * Improved: Overall logic and structure
-* Fixed: Closing randomizer widget wrapper div
+* Fixed: Closing randomizer widget wrapper div (Reported by Lance Jacobs)
 
 = 1.1 =
 * WPML Support
