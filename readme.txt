@@ -48,8 +48,11 @@ Slideshow: [elm_slideshow type="text" category="all"] - content type can be text
 
 == Screenshots ==
 
-1. How it looks on front-end
-2. Editing a random text
+1. Randomizer posts
+2. Adding a new category
+3. Adding a new randomizer post
+4. Randomizer widgets
+5. Final result in front-end
 
 == Changelog ==
 
