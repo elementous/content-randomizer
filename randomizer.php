@@ -146,7 +146,7 @@ class Elm_Randomizer {
 					if ( $type == 'text' || $type == 'video' ) {
 						$output .= '<div class="item">' . apply_filters( 'elm_rt_get_the_content', get_the_content() ) . '</div>';
 					} else if ( $type == 'image' ) {
-						$output .= '<div class="item">' . apply_filters( 'elm_rt_get_the_post_thumbnail', get_the_post_thumbnail( get_the_ID(), apply_filters( 'elm_rt_thumbnail_size', 'medium' ) ) ) . '</div>';
+						$output .= '<div class="item">' . apply_filters( 'elm_rt_get_the_post_thumbnail', get_the_post_thumbnail( $post->ID, apply_filters( 'elm_rt_thumbnail_size', 'medium' ) ) ) . '</div>';
 					}
 				
 				endforeach;
@@ -214,7 +214,7 @@ class Elm_Randomizer {
 				if ( $type == 'text' || $type == 'video' ) {
 					$output .= apply_filters( 'elm_rt_get_the_content', get_the_content() );
 				} else if ( $type == 'image' ) {
-					$output .= apply_filters( 'elm_rt_get_the_post_thumbnail', get_the_post_thumbnail( get_the_ID(), apply_filters( 'elm_rt_thumbnail_size', 'medium' ) ) );
+					$output .= apply_filters( 'elm_rt_get_the_post_thumbnail', get_the_post_thumbnail( $random_post_id, apply_filters( 'elm_rt_thumbnail_size', 'medium' ) ) );
 				}
 				
 		endif;
