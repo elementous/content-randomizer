@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! class_exists( 'WC_Admin_Permalink_Settings' ) ) :
+if ( ! class_exists( 'Elm_Randomizer_Permalink_Settings' ) ) :
 
 class Elm_Randomizer_Permalink_Settings {
 	
