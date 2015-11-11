@@ -4,6 +4,7 @@ class Elm_Randomizer {
 
 	function __construct() {
 		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'init', array( $this, 'update_check' ) );
 		
 		add_action( 'add_meta_boxes', array( $this, 'date_range' ) );
 		add_action( 'save_post', array( $this, 'save_post' ) );
@@ -227,7 +228,21 @@ class Elm_Randomizer {
 	 *
 	 */
 	function register_cp_and_tax() {
-	
+		$permalinks = get_option( 'elm_randomizer_permalinks' );
+		
+		// Default values
+		$custom_post_type_slug = 'randomizer';
+		$taxonomy_slug = 'randomizer-category';
+		
+		if ( $permalinks ) {
+			//$custom_post_type_slug = $permalinks['custom_post_type_base'];
+			if ( $permalinks['custom_post_type_base'] )
+				$custom_post_type_slug = $permalinks['custom_post_type_base'];
+				
+			if ( $permalinks['taxonomy_base'] )
+				$taxonomy_slug = $permalinks['taxonomy_base'];	
+		}
+		
 		// Register randomizer custom post
 		$labels = array(
 			'name'               => __( 'Items', 'elm' ),
@@ -253,7 +268,7 @@ class Elm_Randomizer {
 			'show_ui'            => true,
 			'show_in_menu'       => true,
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'randomizer' ),
+			'rewrite'            => array( 'slug' => $custom_post_type_slug ),
 			'capability_type'    => 'post',
 			'has_archive'        => true,
 			'hierarchical'       => false,
@@ -284,7 +299,7 @@ class Elm_Randomizer {
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'randomizer-category' ),
+			'rewrite'           => array( 'slug' => $taxonomy_slug ),
 		);
 
 		register_taxonomy( 'randomizer_category', array( 'elm_texts' ), $args );
@@ -334,6 +349,8 @@ class Elm_Randomizer {
 	function install() {
 		if ( get_option( 'elm_randomizer' ) != 'installed' ) {
 			update_option( 'elm_randomizer', 'installed' );
+			update_option( 'elm_randomizer_version', ELM_RT_VERSION );
+			update_option( 'elm_randomizer_permalinks', '' );
 		}
 		
 		// Register custom post and taxonomy here so that we can flush permalinks
@@ -342,6 +359,18 @@ class Elm_Randomizer {
 		global $wp_rewrite;
 		
 		$wp_rewrite->flush_rules( false );
+	}
+	
+	/**
+	 * Handle updates.
+	 *
+	 */
+	function update_check() {
+		// < Version 1.2.1
+		if ( ! get_option( 'elm_randomizer_version' ) ) {
+			update_option( 'elm_randomizer_version', ELM_RT_VERSION );
+			update_option( 'elm_randomizer_permalinks', '' );
+		}
 	}
 }
 

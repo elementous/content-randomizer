@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: Elementous, dominykasgel, darius_fx
 Donate link: https://www.elementous.com
-Tags: random, text, quote, joke, featured, image, video, widget, shortcode, slider, slideshow
+Tags: random, text, quote, joke, featured, image, video, widget, shortcode, slider, slideshow, elementous
 Requires at least: 3.0.1
 Tested up to: 4.3
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -20,7 +20,9 @@ The main Content Randomizer widget reacts only when you browse from one page to 
 
 There are shortcodes available for more advanced users. You can use these shortcodes to render random content at any selected location of your website. We hope you will enjoy this plugin.
 
-We have a public [GIT repository](https://github.com/elementous/content-randomizer) for this plugin and you're welcome to contribute your patch.
+[Content Randomizer Documentation](https://www.elementous.com/documentation/#color-filters-for-woocommerce)
+
+We also have a public [GIT repository](https://github.com/elementous/content-randomizer) for this plugin and you're welcome to contribute your patch.
 
 = Features =
 
@@ -29,6 +31,7 @@ We have a public [GIT repository](https://github.com/elementous/content-randomiz
 * Set the date range to control when your random content will be displayed
 * Categories to define random sets of content
 * Widgets and shortcodes to display random content
+* Ability to change randomizer permalinks
 
 == Installation ==
 
@@ -37,24 +40,21 @@ We have a public [GIT repository](https://github.com/elementous/content-randomiz
 
 == Frequently Asked Questions ==
 
-= How to display random text, image or video? =
-
-You can use Content Randomizer widgets or elm_random and elm_slideshow shortcodes.
-
-= Shortcodes =
-
-Random content: [elm_random type="text" category="all"] - content type can be text, image or video.
-Slideshow: [elm_slideshow type="text" category="all"] - content type can be text, image or video.
+For FAQ and more information, please go to [Content Randomizer Documentation](https://www.elementous.com/documentation/#content-randomizer)
 
 == Screenshots ==
 
-1. Randomizer posts
-2. Adding a new category
-3. Adding a new randomizer post
-4. Randomizer widgets
-5. Final result in front-end
+1. Randomizer posts.
+2. Adding a new category.
+3. Adding a new randomizer post.
+4. Randomizer widgets.
+5. Final result in front-end.
 
 == Changelog ==
+
+= 1.2.1 =
+* Feature: Added ability to change randomizer custom post type and randomizer taxonomy permalinks
+* Tweak: Added language (.po) file
 
 = 1.2 =
 * Feature: Added categories for randomizer custom posts
