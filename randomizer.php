@@ -120,7 +120,7 @@ class Elm_Randomizer {
 	 *
 	 */
 	function get_owl_slides( $type = 'text', $category_id = 'all' ) {
-		$args = array( 'post_type' => 'elm_texts', 'post_status' => 'publish' );
+		$args = array( 'post_type' => 'elm_texts', 'post_status' => 'publish', 'posts_per_page' => -1 );
 		
 		if ( $category_id != 'all' ) 
 			$args['tax_query'] = array(
@@ -167,7 +167,7 @@ class Elm_Randomizer {
 	 *
 	 */
 	function get_random( $type = 'text', $category_id = 'all' ) {
-		$args = array( 'post_type' => 'elm_texts', 'post_status' => 'publish' );
+		$args = array( 'post_type' => 'elm_texts', 'post_status' => 'publish', 'posts_per_page' => -1 );
 		
 		if ( $category_id != 'all' ) 
 			$args['tax_query'] = array(

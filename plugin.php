@@ -5,10 +5,10 @@
   Description: This plugin allows you to add texts, images, videos and display them in a random order or slideshow.
   Author: Elementous
   Author URI: https://www.elementous.com
-  Version: 1.2.1
+  Version: 1.2.2
 */
 
-define( 'ELM_RT_VERSION', '1.2.1' );
+define( 'ELM_RT_VERSION', '1.2.2' );
 define( 'ELM_RT_PLUGIN_PATH', dirname( __FILE__ ) );
 define( 'ELM_RT_INCLUDES_PATH', ELM_RT_PLUGIN_PATH . '/includes' );
 define( 'ELM_RT_PLUGIN_FOLDER', basename( ELM_RT_PLUGIN_PATH ) );
