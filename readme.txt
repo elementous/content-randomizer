@@ -3,7 +3,7 @@ Contributors: Elementous, dominykasgel, darius_fx
 Donate link: https://www.elementous.com
 Tags: random, text, quote, joke, featured, image, video, widget, shortcode, slider, slideshow, elementous
 Requires at least: 3.0.1
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: 1.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
