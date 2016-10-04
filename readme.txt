@@ -3,8 +3,8 @@ Contributors: Elementous, dominykasgel, darius_fx
 Donate link: https://www.elementous.com
 Tags: random, text, quote, joke, featured, image, video, widget, shortcode, slider, slideshow, elementous
 Requires at least: 3.0.1
-Tested up to: 4.4
-Stable tag: 1.2.2
+Tested up to: 4.6.1
+Stable tag: 1.2.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -51,6 +51,10 @@ For FAQ and more information, please go to [Content Randomizer Documentation](ht
 5. Final result in front-end.
 
 == Changelog ==
+
+= 1.2.3 =
+* Tweak: Flush rewrite rules after plugin activation
+* Tweak: Date field input CSS
 
 = 1.2.2 =
 * Fixed: WP_Query is missing posts_per_page argument to randomize all posts (Reported by Matt Jones)

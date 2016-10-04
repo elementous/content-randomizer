@@ -62,6 +62,12 @@ class Elm_Randomizer {
 			});
 		});
 	</script>
+
+	<style type="text/css">
+		.date-input {
+			border: 1px solid #E1E1E1;
+		}
+	</style>
 <?php
 	}
 	
@@ -91,12 +97,12 @@ class Elm_Randomizer {
 ?>
 	<p>
 		<label for="date_from"><?php _e('From:', 'elm'); ?></label><br />
-		<input id="date_from" name="date_from" value="<?php echo $date_from; ?>" />
+		<input id="date_from" name="date_from" class="date-input" value="<?php echo $date_from; ?>" />
 	</p>
 	
 	<p>
 		<label for="date_to"><?php _e('To:', 'elm'); ?></label><br />
-		<input id="date_to" name="date_to" value="<?php echo $date_to; ?>" />
+		<input id="date_to" name="date_to" class="date-input" value="<?php echo $date_to; ?>" />
 	</p>
 	
 <?php
@@ -306,7 +312,7 @@ class Elm_Randomizer {
 	}
 	
 	/**
-	* Enqueues JavaScript and CSS files
+	* Enqueues JavaScript and CSS files.
 	*/
 	function enqueue_js_and_css() {
 		$disable_slideshow = apply_filters( 'elm_rt_load_owl', false );
@@ -356,9 +362,7 @@ class Elm_Randomizer {
 		// Register custom post and taxonomy here so that we can flush permalinks
 		$this->register_cp_and_tax();
 		
-		global $wp_rewrite;
-		
-		$wp_rewrite->flush_rules( false );
+		flush_rewrite_rules();
 	}
 	
 	/**
@@ -366,7 +370,6 @@ class Elm_Randomizer {
 	 *
 	 */
 	function update_check() {
-		// < Version 1.2.1
 		if ( ! get_option( 'elm_randomizer_version' ) ) {
 			update_option( 'elm_randomizer_version', ELM_RT_VERSION );
 			update_option( 'elm_randomizer_permalinks', '' );
