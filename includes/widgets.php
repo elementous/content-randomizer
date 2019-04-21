@@ -230,9 +230,18 @@ class RandomizerSlideshow_Widget extends WP_Widget {
 	}
 }
 
+/* 
 add_action('widgets_init',
      create_function('', 'return register_widget("Randomizer_Widget");')
 );
 add_action('widgets_init',
      create_function('', 'return register_widget("RandomizerSlideshow_Widget");')
+); */
+
+add_action('widgets_init',
+     function() {return register_widget("Randomizer_Widget");}
 );
+add_action('widgets_init',
+     function() {return register_widget("RandomizerSlideshow_Widget");}
+);
+
